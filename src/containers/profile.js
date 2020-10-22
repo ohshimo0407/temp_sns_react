@@ -24,7 +24,7 @@ const mapStateToProps = (state, ownProps) => {
             // ぐっと
             goodObj: state.profile.goodObj,
             // loocation受け取り
-            profileLocation:state.router.location
+            location:state.router.location
         }
     )
 };

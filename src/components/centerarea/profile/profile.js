@@ -3,7 +3,7 @@ import React from 'react'
 // import Following from '../../../containers/following'
 import Following from './following'
 import MyProfile from '../../../containers/MyProfile'
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux'; // 追加
 
 class Profile extends React.Component {
@@ -28,14 +28,14 @@ class Profile extends React.Component {
         console.log(this.props)
         return (
             
-                <Switch>
-
+                <Router>
+                    <React.Fragment>
                     <Route path="/profile/:menu" component={ProfileMenu} />
-                    <Route path="/profile" component={MyProfile} />
+                    <Route exact path="/profile" component={MyProfile} />
                     {/* <MyProfile {...this.props} /> */}
                     {/* <Following /> */}
-
-                </Switch>
+                    </React.Fragment>
+                </Router>
             
         )
     }
